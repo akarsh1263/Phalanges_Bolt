@@ -89,6 +89,7 @@ exports.postPrescription =  async (req, res) => {
             { prescription },
             { new: true }
         );
+        res.status(200).json(updatedAppointment);
     } catch (error) {
         console.error('Error posting prescription:', error);
         res.status(500).json({ error: 'Server error' });
